@@ -1,0 +1,28 @@
+---
+import Menu from './Menu.astro'
+---
+
+<nav class="navbar flex items-center justify-center md:justify-around bg-brown border-b border-gray-400 py-2 mb-4">
+
+    <!-- NAVIGATION MENU -->
+    <ul class="nav-links">
+
+      <!-- USING CHECKBOX HACK -->
+      <input type="checkbox" id="checkbox_toggle" class="hidden peer"/>
+      <label for="checkbox_toggle" class="hamburger block lg:hidden text-2xl select-none text-white text-center">&#9776;</label>
+
+      <!-- NAVIGATION MENUS -->
+      <div class="menu lg:flex gap-1 text-lg space-x-4 hidden text-center peer-checked:flex peer-checked:flex-col">
+        <Menu name='Ajar'/>
+        <Menu name='Pustaka'/>
+        <Menu name='Manggala'/>
+        <Menu name='Karas'/>
+        <Menu name='Prasi'/>
+        <Menu name='Skriptorium'/>
+        <Menu name='Katalog'/>
+        <Menu name='Wara'/>
+        <Menu name='Peta Naskah'/>
+        <Menu name='Kirim Tulisan'/>
+      </div>
+    </ul>
+  </nav>

@@ -1,0 +1,19 @@
+---
+const {title, author} = Astro.props;
+---
+
+<div class="font-raleway">
+    <h2 class="font-semibold text-black text-sm leading-[17.61px] hover:text-brown duration-700">
+        <a href="#">
+        {title}
+    </a>
+    </h2>
+<div class="flex flex-row text-xs md:text-sm lg:leading-9 space-x-1 pt-1">
+<h2 class=" text-
+black italic font-thin">Oleh</h2>
+<h2 class="text-black font-normal group transition">
+    <a href="#">{author}</a>
+    <span class="block max-w-0 group-hover:max-w-full transition-all duration-1000 h-0.5 bg-brown"></span>
+</h2>
+</div>
+</div>

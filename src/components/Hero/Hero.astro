@@ -1,0 +1,55 @@
+---
+import Slider from './Slider.astro'
+---
+<section class='flex mx-5'>
+
+    <div class='swiper swiper-hero'>
+        <div class='swiper-wrapper'>
+        <div class="swiper-slide">
+            <Slider
+            imageURL={'https://images.unsplash.com/photo-1518070588484-2b53926cba76?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80'}
+            title={'Naskah Merapi-Merbabu dalam Jaringan Skriptorium'} 
+            author={'Tio Cahya Sadewa'} 
+            summary={'Naskah kuno yang dituliskan oleh leluhur-leluhur kita memuat banyak ajaran atau piwulang luhur yang dapat kita pelajari. Piwulang yang banyak terekam dalam naskah kuno di antaranya adalah piwulang tentang wanita. '}
+            />
+        </div>
+        <div class="swiper-slide">
+            <Slider
+            imageURL={'https://images.unsplash.com/photo-1518070588484-2b53926cba76?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80'}
+            title={'Kritik Poerbatjaraka atas Suntingan Kakawin Ramayana Karya H.Kern'} 
+            author={'Tio Cahya Sadewa'} 
+            summary={'Naskah kuno yang dituliskan oleh leluhur-leluhur kita memuat banyak ajaran atau piwulang luhur yang dapat kita pelajari. Piwulang yang banyak terekam dalam naskah kuno di antaranya adalah piwulang tentang wanita. '}
+            />
+        </div>
+        <div class="swiper-slide">
+            <Slider
+            imageURL={'https://images.unsplash.com/photo-1518070588484-2b53926cba76?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80'}
+            title={'Manurung: Jarak antara Bangsawan dan Budak adalah Puisi'} 
+            author={'Tio Cahya Sadewa'} 
+            summary={'Naskah kuno yang dituliskan oleh leluhur-leluhur kita memuat banyak ajaran atau piwulang luhur yang dapat kita pelajari. Piwulang yang banyak terekam dalam naskah kuno di antaranya adalah piwulang tentang wanita. '}
+            />
+        </div>
+        </div>
+    </div>
+
+
+</section>
+
+<script>
+import Swiper, { Autoplay, Navigation, Pagination } from 'swiper';
+  // import Swiper and modules styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/autoplay';
+Swiper.use([Navigation, Pagination, Autoplay]);
+const swiperHero = new Swiper('.swiper-hero', {
+  speed: 2500,
+  spaceBetween: 100,
+  slidesPerView: 1,
+  loop: true,
+  autoplay: {
+    delay: 8500,
+    disableOnInteraction: true,
+  },
+});
+</script>

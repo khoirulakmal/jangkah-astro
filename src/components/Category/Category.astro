@@ -1,0 +1,143 @@
+---
+import CategoryPost from '../Category/CategoryPost.astro'
+---
+
+<section class="flex flex-row mx-2">
+    <div class="swiper-button-prev-unique flex justify-center items-center">
+        <img src="/navigation/slider-prev.svg" class="cursor-pointer">
+    </div>
+    <div class="swiper swiper-category mx-3">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <CategoryPost title={'Manggala'} 
+                    post1={{
+                        title:'Kritik Poerbatjaraka atas Suntingan Kakawin Ramayana Karya H.Kern',
+                        author:'Tio Cahya Sadewa'
+                    }}
+                    post2={{
+                        title:'Naskah Merapi-Merbabu dalam Jaringan Skriptorium',
+                        author:'Naufal Mahdi'
+                    }}
+                    post3={{
+                        title:'Manurung: Jarak antara Bangsawan dan Budak adalah Puisi',
+                        author:'Penulis Anonim'
+                    }} />
+                </div>
+                <div class="swiper-slide">
+                <CategoryPost title={'Prasi'} 
+                    post1={{
+                        title:'Kritik Poerbatjaraka atas Suntingan Kakawin Ramayana Karya H.Kern',
+                        author:'Tio Cahya Sadewa'
+                    }}
+                    post2={{
+                        title:'Naskah Merapi-Merbabu dalam Jaringan Skriptorium',
+                        author:'Naufal Mahdi'
+                    }}
+                    post3={{
+                        title:'Manurung: Jarak antara Bangsawan dan Budak adalah Puisi',
+                        author:'Penulis Anonim'
+                    }} />
+                </div>
+                <div class="swiper-slide">
+                <CategoryPost title={'Karas'} 
+                    post1={{
+                        title:'Kritik Poerbatjaraka atas Suntingan Kakawin Ramayana Karya H.Kern',
+                        author:'Tio Cahya Sadewa'
+                    }}
+                    post2={{
+                        title:'Naskah Merapi-Merbabu dalam Jaringan Skriptorium',
+                        author:'Naufal Mahdi'
+                    }}
+                    post3={{
+                        title:'Manurung: Jarak antara Bangsawan dan Budak adalah Puisi',
+                        author:'Penulis Anonim'
+                    }} />
+                </div>
+                <div class="swiper-slide">
+                <CategoryPost title={'Pustaka'} 
+                    post1={{
+                        title:'Kritik Poerbatjaraka atas Suntingan Kakawin Ramayana Karya H.Kern',
+                        author:'Tio Cahya Sadewa'
+                    }}
+                    post2={{
+                        title:'Naskah Merapi-Merbabu dalam Jaringan Skriptorium',
+                        author:'Naufal Mahdi'
+                    }}
+                    post3={{
+                        title:'Manurung: Jarak antara Bangsawan dan Budak adalah Puisi',
+                        author:'Penulis Anonim'
+                    }} />
+                </div>
+                <div class="swiper-slide">
+                <CategoryPost title={'Skriptorium'} 
+                    post1={{
+                        title:'Kritik Poerbatjaraka atas Suntingan Kakawin Ramayana Karya H.Kern',
+                        author:'Tio Cahya Sadewa'
+                    }}
+                    post2={{
+                        title:'Naskah Merapi-Merbabu dalam Jaringan Skriptorium',
+                        author:'Naufal Mahdi'
+                    }}
+                    post3={{
+                        title:'Manurung: Jarak antara Bangsawan dan Budak adalah Puisi',
+                        author:'Penulis Anonim'
+                    }} />
+                </div>
+                <div class="swiper-slide">
+                <CategoryPost title={'Wara'} 
+                    post1={{
+                        title:'Kritik Poerbatjaraka atas Suntingan Kakawin Ramayana Karya H.Kern',
+                        author:'Tio Cahya Sadewa'
+                    }}
+                    post2={{
+                        title:'Naskah Merapi-Merbabu dalam Jaringan Skriptorium',
+                        author:'Naufal Mahdi'
+                    }}
+                    post3={{
+                        title:'Manurung: Jarak antara Bangsawan dan Budak adalah Puisi',
+                        author:'Penulis Anonim'
+                    }} />
+                </div>
+        </div>
+    </div>
+    <div class="swiper-button-prev-unique flex justify-center items-center">
+        <img src="/navigation/slider-next.svg" class="cursor-pointer">
+    </div>
+
+</section>
+
+<script>
+    import Swiper, { Navigation, Pagination } from 'swiper';
+      // import Swiper and modules styles
+    import 'swiper/css';
+    import 'swiper/css/navigation';
+    Swiper.use([Navigation, Pagination]);
+    const swiperCategory = new Swiper('.swiper-category', {
+      speed: 4500,
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      slidesOffsetAfter:0,
+      rewind: true,
+      navigation: {
+            nextEl: '.swiper-button-next-unique',
+            prevEl: '.swiper-button-prev-unique',
+        },
+        breakpoints: {
+            640: {
+              slidesPerView: 1.5,
+              slidesPerGroup: 1.5,
+              spaceBetween: 10,
+            },
+            1024: {
+                slidesPerView: 2.2,
+                slidesPerGroup: 2.2,
+                spaceBetween: 20,
+              },
+            1248: {
+              slidesPerView: 3.2,
+              slidesPerGroup: 3.2,
+              spaceBetween: 10,
+            },
+          },
+    });
+    </script>
