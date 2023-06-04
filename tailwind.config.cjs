@@ -3,7 +3,7 @@ module.exports = {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 		fontFamily: {
-		  'raleway': ['Raleway', 'sans-serif'],
+		  'raleway': ['Raleway Variable', 'sans-serif'],
 		  'tangerine': ['Tangerine', 'cursive'],
 		},
 		extend: {
