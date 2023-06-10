@@ -1,36 +1,36 @@
 ---
 const {imageURL, title, author, summary} = Astro.props;
 ---
-<section class="flex flex-col md:flex-row mb-4 justify-between md:h-[460px] lg:h-[920px] relative">
+<section class="flex flex-col lg:flex-row justify-between h-full relative">
         <img
         src={imageURL}
-        class="object-cover h-full w-full max-w-xl xl:max-w-3xl"
+        class="object-cover h-full w-full lg:w-4/6"
         alt="Image thumbnail" 
         />
-        <div class="lg:border-2 lg:border-brown lg:ml-4 p-2 shadow-xl md:shadow-none">
-    <div class="flex flex-col lg:border-4 lg:border-brown  p-4 h-full font-raleway lg:py-20 xl:py-32">
-        <h1 class="text-sm lg:text-[50px] text-brown hover:text-red-900	 lg:leading-[59px] font-black group transition-all duration-200 ease-in-out">
-            <a href="/article">
-                <span class='bg-left-bottom bg-gradient-to-r from-brown to-brown bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-[3000ms] ease-out'>
-                {title}
-                </span>
-            </a>
-        </h1>
-        <div class="flex flex-row text-xs lg:text-[30px] lg:leading-9 space-x-2 pt-1">
-            <h2 class=" text-black italic font-thin">Oleh</h2>
-            <h2 class="text-black font-normal group transition hover:text-brown">
-                <a href="#">{author}</a>
-                <span class="block max-w-0 group-hover:max-w-full transition-all duration-1000 h-0.5 bg-brown"></span>
-            </h2>
+    <div class="lg:border-2 lg:border-brown lg:ml-4 p-2 shadow-xl md:shadow-none">
+        <div class="flex flex-col lg:border-4 lg:border-brown  p-2 h-full font-raleway lg:py-16">
+            <h1 class="text-sm md:text-xl lg:text-2xl xl:text-4xl text-brown hover:text-red-900 xl:leading-[59px] font-black group transition-all duration-200 ease-in-out">
+                <a href="/article">
+                    <span class='bg-left-bottom bg-gradient-to-r from-brown to-brown bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-[3000ms] ease-out'>
+                    {title}
+                    </span>
+                </a>
+            </h1>
+            <div class="flex flex-row text-xs lg:text-xl lg:leading-9 space-x-2 pt-1">
+                <h2 class=" text-black italic font-thin">Oleh</h2>
+                <h2 class="text-black font-normal group transition hover:text-brown">
+                    <a href="#">{author}</a>
+                    <span class="block max-w-0 group-hover:max-w-full transition-all duration-1000 h-0.5 bg-brown"></span>
+                </h2>
+            </div>
+            <article class="hidden lg:block h-full overflow-hidden hover:overflow-y-scroll  font-raleway font-normal text-xs lg:text-xl leading-6 pt-6 space-y-4">
+                <p>
+                    {summary}
+                </p>
+                <p>
+                    {summary}                        
+                </p>
+            </article>
         </div>
-        <article class="hidden md:block h-full text-ellipsis overflow-hidden font-raleway font-normal text-xs lg:text-[20px] leading-6 pt-6 space-y-4">
-            <p>
-                {summary}
-            </p>
-            <p>
-                {summary}                        
-            </p>
-        </article>
-    </div>
     </div>
 </section>
