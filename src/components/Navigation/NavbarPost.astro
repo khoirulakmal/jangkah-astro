@@ -1,0 +1,64 @@
+---
+import Menu from './Menu.astro'
+---
+
+<nav id="navbarPost" class="navbar top-0 overflow-hidden w-full flex items-center justify-center md:justify-around bg-brown border-b border-gray-400 py-1 z-50">
+
+    <!-- NAVIGATION MENU -->
+    <ul class="nav-links">
+
+      <!-- Jangkah Logo -->
+      <a href="/">
+      <img id="jangkahLogo" class="mx-auto h-[25px] w-[25px]" src="https://jangkah.id/wp-content/uploads/2021/03/logo-footer-01-300x300.png.webp" alt="Logo Jangkah Kecil" />
+      </a>
+
+      <!-- USING CHECKBOX HACK -->
+      <input type="checkbox" id="checkbox_toggle" class="hidden peer"/>
+      <label for="checkbox_toggle" class="hamburger block lg:hidden text-2xl select-none text-white text-center">&#9776;</label>
+
+      <!-- NAVIGATION MENUS -->
+      <div id="menuPost" class="menu lg:hidden gap-1 text-lg space-x-2 xl:space-x-4 hidden text-center peer-checked:flex peer-checked:flex-col">
+        <Menu name='Ajar'/>
+        <Menu name='Pustaka'/>
+        <Menu name='Manggala'/>
+        <Menu name='Karas'/>
+        <Menu name='Prasi'/>
+        <Menu name='Skriptorium'/>
+        <Menu name='Katalog'/>
+        <Menu name='Wara'/>
+        <Menu name='Peta Naskah'/>
+        <Menu name='Kirim Tulisan'/>
+      </div>
+    </ul>
+  </nav>
+
+<script>
+
+window.addEventListener('scroll', function() {
+  var imageSection = document.getElementById('article-section');
+  var navbarPost = document.getElementById('navbarPost');
+  var menuPost = document.getElementById('menuPost');
+  var logo = document.getElementById('jangkahLogo');
+  var imageSectionOffsetTop = imageSection.offsetTop;
+  var windowHeight = window.innerHeight;
+  var scrollTop = window.scrollY;
+  
+  // Calculate the threshold position
+  var threshold = imageSectionOffsetTop - windowHeight;
+  
+  // Check if the scroll position is beyond the threshold
+  if (scrollTop > threshold) {
+    menuPost.classList.remove('lg:hidden');
+    menuPost.classList.add('lg:flex');
+    navbarPost.classList.add('fixed');
+    logo.classList.add('hidden');
+  } 
+
+  if (scrollTop < threshold) {
+    menuPost.classList.add('lg:hidden');
+    menuPost.classList.remove('lg:flex');
+    navbarPost.classList.remove('fixed');
+    logo.classList.remove('hidden');  }
+
+});
+</script>
