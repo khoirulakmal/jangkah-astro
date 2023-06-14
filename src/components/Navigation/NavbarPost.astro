@@ -4,8 +4,6 @@ import Menu from './Menu.astro'
 
 <nav id="navbarPost" class="navbar top-0 overflow-hidden w-full flex items-center justify-center md:justify-around bg-brown border-b border-gray-400 py-1 z-50">
 
-    <!-- NAVIGATION MENU -->
-    <ul class="nav-links">
 
       <!-- Jangkah Logo -->
       <a href="/">
@@ -13,11 +11,11 @@ import Menu from './Menu.astro'
       </a>
 
       <!-- USING CHECKBOX HACK -->
-      <input type="checkbox" id="checkbox_toggle" class="hidden peer"/>
-      <label for="checkbox_toggle" class="hamburger block lg:hidden text-2xl select-none text-white text-center">&#9776;</label>
+      <!-- <input type="checkbox" id="checkbox_toggle" class="hidden peer"/>
+      <label for="checkbox_toggle" class="hamburger block lg:hidden text-2xl select-none text-white text-center">&#9776;</label> -->
 
       <!-- NAVIGATION MENUS -->
-      <div id="menuPost" class="menu lg:hidden gap-1 text-lg space-x-2 xl:space-x-4 hidden text-center peer-checked:flex peer-checked:flex-col">
+      <div id="menuPost" class="menu lg:hidden gap-1 text-lg space-x-2 xl:space-x-4 hidden text-center">
         <Menu name='Ajar'/>
         <Menu name='Pustaka'/>
         <Menu name='Manggala'/>
@@ -29,36 +27,44 @@ import Menu from './Menu.astro'
         <Menu name='Peta Naskah'/>
         <Menu name='Kirim Tulisan'/>
       </div>
-    </ul>
   </nav>
 
 <script>
-
-window.addEventListener('scroll', function() {
-  var imageSection = document.getElementById('article-section');
+  const laptopPostScreen = window.matchMedia("(min-width: 1024px)");
+  const tabletPostScreen = window.matchMedia("(max-width: 1024px)");
+  var imageSection = document.getElementById('featured-image-section');
   var navbarPost = document.getElementById('navbarPost');
   var menuPost = document.getElementById('menuPost');
   var logo = document.getElementById('jangkahLogo');
-  var imageSectionOffsetTop = imageSection.offsetTop;
-  var windowHeight = window.innerHeight;
-  var scrollTop = window.scrollY;
-  
-  // Calculate the threshold position
-  var threshold = imageSectionOffsetTop - windowHeight;
-  
-  // Check if the scroll position is beyond the threshold
-  if (scrollTop > threshold) {
-    menuPost.classList.remove('lg:hidden');
-    menuPost.classList.add('lg:flex');
-    navbarPost.classList.add('fixed');
-    logo.classList.add('hidden');
-  } 
 
-  if (scrollTop < threshold) {
-    menuPost.classList.add('lg:hidden');
-    menuPost.classList.remove('lg:flex');
-    navbarPost.classList.remove('fixed');
-    logo.classList.remove('hidden');  }
-
+  // Create an Intersection Observer instance
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    // Check if the section is completely out of view
+    if (!entry.isIntersecting && entry.intersectionRatio === 0) {
+      menuPost.classList.remove('lg:hidden');
+      menuPost.classList.add('lg:flex');
+      navbarPost.classList.add('fixed');
+      logo.classList.add('hidden');
+      console.log('The image section has completely vanished from view.');
+    } else {
+      menuPost.classList.add('lg:hidden');
+      menuPost.classList.remove('lg:flex');
+      navbarPost.classList.remove('fixed');
+      logo.classList.remove('hidden');
+      console.log('The article section is seen in view')
+    }
+  });
 });
+
+
+// Start observing the section
+if (laptopPostScreen.matches){
+observer.observe(imageSection);
+}
+
+if (tabletPostScreen.matches){
+  navbarPost.classList.add('fixed');
+}
+
 </script>

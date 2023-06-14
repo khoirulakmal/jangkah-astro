@@ -1,13 +1,69 @@
-<section class="flex flex-col md:flex-row bg-brown justify-center py-2 md:py-5 space-x-5">
-    <div class="font-raleway text-white text-sm font-normal text-center md:text-right px-3 md:px-0 md:w-1/4 py-3">
+---
+import Menu from '../Navigation/Menu.astro'
+---
+<style>
+
+.swiper-slide {
+  text-align: center;
+  width: auto;
+}
+</style>
+<section id="footer-section" class="flex flex-col lg:flex-row lg:items-center lg:mx-auto justify-center  bg-brown sticky bottom-0 z-50 lg:relative lg:z-0 py-2 lg:py-5 mx-auto lg:space-x-5 px-2 lg:px-10">
+    <div id="jangkah-description" class="hidden lg:block max-h-0 lg:max-h-full font-raleway text-white text-sm font-normal text-center lg:text-right lg:w-1/4 ease-out pt-2 lg:pt-0">
         <p>
         <b>Jangkah.id</b> adalah sebuah portal yang dipersembahkan untuk mendukung terwujudnya masyarakat yang berbudaya dan menjunjung tinggi kedamaian semesta.
         </p>
     </div>
-    <div>
-        <img class="mx-auto h-[100px] w-[100px]" src="https://jangkah.id/wp-content/uploads/2021/03/logo-footer-01-300x300.png.webp" alt="Logo Jangkah Kecil" />
+    <div id="jangkah-logo" class="flex mx-auto justify-center items-center lg:items-start order-first lg:order-2 py-1 lg:py-0">
+        <img class="w-[30px] h-[30px] lg:h-[100px] lg:w-[100px]" src="https://jangkah.id/wp-content/uploads/2021/03/logo-footer-01-300x300.png.webp" alt="Logo Jangkah Kecil" />
     </div>
-    <div class="font-raleway text-white text-sm font-normal text-center md:text-left px-3 md:px-0 md:w-1/4 space-y-2 py-3">
+    <div id="footer-category" class="hidden max-h-0 mx-auto w-full lg:hidden relative space-x-4 ease-out">
+        <div class="swiper-button-prev-footer flex justify-center items-center">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.51187 5.00029L6.57429 7.06267L5.98504 7.65192L3.33337 5.00029L5.98504 2.34863L6.57429 2.93789L4.51187 5.00029Z" fill="white"/>
+                </svg>                
+        </div>
+    <div class="swiper swiper-footer flex">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <Menu name='Ajar'/>
+            </div>
+            <div class="swiper-slide">
+                <Menu name='Pustaka'/>
+            </div>
+            <div class="swiper-slide">
+                <Menu name='Manggala'/>
+            </div>
+            <div class="swiper-slide">
+                <Menu name='Karas'/>
+            </div>
+            <div class="swiper-slide">
+                <Menu name='Prasi'/>
+            </div>
+            <div class="swiper-slide">
+                <Menu name='Skriptorium'/>
+            </div>
+            <div class="swiper-slide">
+                <Menu name='Katalog'/>
+            </div>
+            <div class="swiper-slide">
+                <Menu name='Wara'/>
+            </div>
+            <div class="swiper-slide">
+                <Menu name='Peta Naskah'/>
+            </div>
+            <div class="swiper-slide">
+                <Menu name='Kirim Tulisan'/>
+            </div>
+        </div>
+    </div>
+        <div class="swiper-button-next-footer flex justify-center items-center">
+        <svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5.48804 3.57164L3.42566 2.09849L4.01491 1.6776L6.66658 3.57164L4.01491 5.46566L3.42566 5.04476L5.48804 3.57164Z" fill="white"/>
+            </svg>                
+        </div>
+    </div>
+    <div class="hidden lg:block lg:order-last font-raleway text-white text-sm font-normal text-center md:text-left md:w-1/4 space-y-1">
         <p>
         Jl. Imogiri Timur Km. 10, Wonokromo I, RT. 01, Wonokromo, Pleret, Bantul, Yogyakarta. 55791
         </p>
@@ -19,3 +75,53 @@
         </p>
     </div>
 </section>
+
+<script>
+    import Swiper, {Navigation} from 'swiper';
+      // import Swiper and modules styles
+    Swiper.use([Navigation]);
+    const swiperFooter = new Swiper('.swiper-footer', {
+      loop: true,
+      slidesPerView: 'auto',
+      spaceBetween: 10,
+      navigation: {
+        nextEl: '.swiper-button-next-footer',
+        prevEl: '.swiper-button-prev-footer',
+        },
+    });
+    </script>
+
+    <script>
+        const tabletScreen = window.matchMedia("(max-width: 768px)");
+        const jangkahDescription = document.querySelector("#jangkah-description");
+        const jangkahLogo = document.querySelector("#jangkah-logo");
+        const footerCategory = document.querySelector("#footer-category");
+        let isFooterShow = false;
+        
+        if (tabletScreen.matches) {
+            jangkahLogo.addEventListener("click", showFooter);
+            
+            document.addEventListener("click", function(event) {
+                if ((event.target as Element).closest("#footer-section")) return;
+                
+                if (isFooterShow) {
+                footerCategory.classList.remove("flex", "flex-row", "max-h-full", "ease-in");
+                footerCategory.classList.add("hidden", "max-h-0", "ease-out");
+                jangkahDescription.classList.remove("max-h-full", "ease-in");
+                jangkahDescription.classList.add("hidden", "max-h-0", "ease-out");
+                isFooterShow = false;
+                console.log(isFooterShow);
+                }
+            });
+        }
+
+        function showFooter() {
+            jangkahDescription.classList.remove("hidden", "max-h-0", "ease-out");
+            jangkahDescription.classList.add("max-h-full", "ease-in");
+            footerCategory.classList.remove("hidden", "max-h-0", "ease-out");
+            footerCategory.classList.add("flex", "flex-row", "max-h-full", "ease-in");
+            isFooterShow = true;            
+        }
+
+
+    </script>

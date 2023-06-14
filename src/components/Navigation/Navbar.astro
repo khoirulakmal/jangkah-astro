@@ -2,17 +2,14 @@
 import Menu from './Menu.astro'
 ---
 
-<nav class="navbar flex items-center justify-center md:justify-around bg-brown border-b border-gray-400 py-2 mb-4 md:z-10">
+<nav class="navbar flex justify-center hover:justify-between bg-brown border-b border-gray-400 p-2 md:pt-2 md:px-16 group sticky top-0 w-full z-40 overflow-hidden ease-in duration-1000">
 
-    <!-- NAVIGATION MENU -->
-    <ul class="nav-links">
-
-      <!-- USING CHECKBOX HACK -->
-      <input type="checkbox" id="checkbox_toggle" class="hidden peer"/>
-      <label for="checkbox_toggle" class="hamburger block lg:hidden text-2xl select-none text-white text-center">&#9776;</label>
+  <div class="items-center ease-in lg:group-hover:duration-500 pb-2">
+    <img src="/logo.png" class="mx-auto w-1/2 md:w-auto md:h-[80px] cursor-pointer">
+    </div>
 
       <!-- NAVIGATION MENUS -->
-      <div class="menu lg:flex gap-1 text-lg space-x-2 xl:space-x-4 hidden text-center peer-checked:flex peer-checked:flex-col">
+      <div class="flex menu gap-1 text-lg space-x-2 absolute opacity-0 h-0 xl:space-x-4 text-center lg:group-hover:opacity-100 lg:group-hover:relative lg:group-hover:h-auto lg:group-hover:duration-[2000ms] items-center ease-in-out duration-0">
         <Menu name='Ajar'/>
         <Menu name='Pustaka'/>
         <Menu name='Manggala'/>
@@ -24,5 +21,4 @@ import Menu from './Menu.astro'
         <Menu name='Peta Naskah'/>
         <Menu name='Kirim Tulisan'/>
       </div>
-    </ul>
   </nav>

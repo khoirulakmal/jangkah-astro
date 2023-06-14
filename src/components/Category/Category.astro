@@ -3,7 +3,7 @@ import CategoryPost from '../Category/CategoryPost.astro'
 ---
 
 <section class="flex flex-row mx-2 md:mx-10">
-    <div class="swiper-button-prev-unique flex justify-center items-center">
+    <div class="swiper-button-prev-unique flex justify-center items-center lg:-ml-8">
         <img src="/navigation/slider-prev.svg" class="cursor-pointer">
     </div>
     <div class="swiper swiper-category mx-3">
@@ -100,7 +100,7 @@ import CategoryPost from '../Category/CategoryPost.astro'
                 </div>
         </div>
     </div>
-    <div class="swiper-button-prev-unique flex justify-center items-center">
+    <div class="swiper-button-next-unique flex justify-center items-center lg:-mr-8">
         <img src="/navigation/slider-next.svg" class="cursor-pointer">
     </div>
 
@@ -115,8 +115,6 @@ import CategoryPost from '../Category/CategoryPost.astro'
     const swiperCategory = new Swiper('.swiper-category', {
       speed: 4500,
       slidesPerView: 1,
-      slidesPerGroup: 1,
-      slidesOffsetAfter:0,
       rewind: true,
       navigation: {
             nextEl: '.swiper-button-next-unique',
@@ -124,19 +122,16 @@ import CategoryPost from '../Category/CategoryPost.astro'
         },
         breakpoints: {
             640: {
-              slidesPerView: 1.5,
-              slidesPerGroup: 1.5,
+              slidesPerView: 2,
               spaceBetween: 10,
             },
             1024: {
-                slidesPerView: 2.2,
-                slidesPerGroup: 2.2,
+                slidesPerView: 3.2,
                 spaceBetween: 20,
               },
             1248: {
-              slidesPerView: 3.7,
-              slidesPerGroup: 1,
-              spaceBetween: 10,
+              slidesPerView: 4.3,
+              spaceBetween: 20,
             },
           },
     });
