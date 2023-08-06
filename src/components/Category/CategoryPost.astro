@@ -3,7 +3,7 @@ import Post from '../Post/Post.astro'
 const {title, post1, post2, post3} = Astro.props;
 ---
 
-<div class="flex flex-col justify-center items-center border-[2px] p-2 md:p-2 md:pb-0 m-2 border-gray shadow-xl">
+<div class="box-border w-screen md:w-full flex flex-col justify-center items-center border-[2px] px-10 py-2 md:p-2 md:pb-0 border-gray shadow-xl">
     <h1 class="font-tangerine text-brown text-5xl lg:text-7xl px-5">{title}</h1>
     <div class="flex flex-col w-full md:w-60 pt-5 divide-y-2 divide-dotted divide-gray-400 ">
         <Post title={post1.title} author={post1.author} />
