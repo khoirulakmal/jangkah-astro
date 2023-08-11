@@ -4,9 +4,10 @@ const {title, post1, post2, post3} = Astro.props;
 ---
 
 <div class="box-border w-[90vw] md:w-full flex flex-col justify-center items-center border-[2px] mx-3 my-5 px-10 py-2 md:mx-0 md:p-2 md:pb-0 border-gray shadow-xl">
-    <a href="/rubrik">
-        <h1 class="font-tangerine text-brown text-5xl lg:text-7xl px-5">{title}</h1>
-    </a>
+        <h1 class="font-tangerine text-brown text-5xl lg:text-7xl px-5 group">
+            <a href="/rubrik">{title}</a>
+            <span class="block max-w-0 group-hover:max-w-full transition-all duration-1000 h-0.5 bg-brown"></span>
+            </h1>
     <div class="flex flex-col w-full md:w-60 py-5 space-y-2 divide-y-2 divide-dotted divide-gray-400 ">
         <Post title={post1.title} author={post1.author} />
         <Post title={post2.title} author={post2.author} />
