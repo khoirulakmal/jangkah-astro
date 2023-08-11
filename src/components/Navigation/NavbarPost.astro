@@ -2,12 +2,13 @@
 import Menu from './Menu.astro'
 ---
 
-<nav id="navbarPost" class="navbar top-0 overflow-hidden w-full flex items-center justify-center md:justify-around bg-brown border-b border-gray-400 py-1 z-50">
+<nav id="navbarPost" class="navbar top-0 overflow-hidden w-full flex items-center justify-center md:justify-around bg-brown border-b border-gray-400 py-2 px-2 md:px-36 z-50">
 
 
       <!-- Jangkah Logo -->
       <a href="/">
       <img id="jangkahLogo" class="mx-auto h-[25px] w-[25px]" src="https://jangkah.id/wp-content/uploads/2021/03/logo-footer-01-300x300.png.webp" alt="Logo Jangkah Kecil" />
+      <img id="jangkahLogoMini" class="hidden mx-auto my-2 w-full h-[50px]" src="/logo-mini.png" alt="Logo Jangkah Kecil 2" />
       </a>
 
       <!-- USING CHECKBOX HACK -->
@@ -15,7 +16,7 @@ import Menu from './Menu.astro'
       <label for="checkbox_toggle" class="hamburger block lg:hidden text-2xl select-none text-white text-center">&#9776;</label> -->
 
       <!-- NAVIGATION MENUS -->
-      <div id="menuPost" class="menu lg:hidden gap-1 text-lg space-x-2 xl:space-x-4 hidden text-center">
+      <div id="menuPost" class="menu lg:hidden gap-1 text-lg space-x-2 hidden text-center">
         <Menu name='Ajar'/>
         <Menu name='Pustaka'/>
         <Menu name='Manggala'/>
@@ -36,6 +37,7 @@ import Menu from './Menu.astro'
   var navbarPost = document.getElementById('navbarPost');
   var menuPost = document.getElementById('menuPost');
   var logo = document.getElementById('jangkahLogo');
+  var logoMini = document.getElementById('jangkahLogoMini');
 
   // Create an Intersection Observer instance
 const observer = new IntersectionObserver(entries => {
@@ -46,12 +48,14 @@ const observer = new IntersectionObserver(entries => {
       menuPost.classList.add('lg:flex');
       navbarPost.classList.add('fixed');
       logo.classList.add('hidden');
+      logoMini.classList.remove('hidden');
       console.log('The image section has completely vanished from view.');
     } else {
       menuPost.classList.add('lg:hidden');
       menuPost.classList.remove('lg:flex');
       navbarPost.classList.remove('fixed');
       logo.classList.remove('hidden');
+      logoMini.classList.add('hidden');
       console.log('The article section is seen in view')
     }
   });
