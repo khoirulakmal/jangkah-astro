@@ -3,7 +3,7 @@ import Post from '../Post/Post.astro';
 ---
 
 <section id="map-section" class="grid grid-cols-1 lg:grid-cols-8 gap-2 mx-2 md:mx-12">
-    <div id="post" class="lg:col-span-2 lg:hover:col-span-4 flex flex-col md:h-72 md:hover:h-72 group/post peer/post outline outline-2 outline-brown lg:hover:my-2 overflow-clip hover:overflow-scroll shadow-[0_4px_5px_0px_rgba(#693305)] shadow-brown border border-brown">
+    <div id="post" class="lg:col-span-2 lg:hover:col-span-4 flex flex-col group/post peer/post outline outline-2 outline-brown overflow-clip hover:overflow-scroll shadow-[0_4px_5px_0px_rgba(#693305)] shadow-brown border border-brown">
         <div id="postCategory" class="flex flex-row bg-brown font-raleway font-bold text-lg md:text-sm lg:text-sm text-[#D9D9D9] text-center lg:px-5 px-10 py-2">
             <h2 class="group transition mx-auto">
                 <a href="#terbaru" id="terbaru">Terbaru</a>
@@ -14,12 +14,12 @@ import Post from '../Post/Post.astro';
             <span class="block max-w-0 group-hover:max-w-full transition-all duration-1000 h-0.5 bg-white"></span>
             </h2>
         </div>
-        <div class="flex flex-row py-2">
+        <div class="flex flex-row py-2 lg:h-72">
         <div id="postTerbaru" class="flex flex-col px-10 md:px-5 divide-y-2 divide-dotted divide-brown">
                 <Post title={'Kritik Poerbatjaraka atas Suntingan Kakawin Ramayana Karya H.Kern'} author={'Tio Cahya Sadewa'} />
                 <Post title={'Naskah Merapi-Merbabu dalam Jaringan Skriptorium'} author={'Naufal Mahdi'} />
-                <Post title={'Manurung: Jarak antara Bangsawan dan Budak adalah Puisi'} author={'Penulis Anonim'} />
                 <Post title={'Kritik Poerbatjaraka atas Suntingan Kakawin Ramayana Karya H.Kern'} author={'Tio Cahya Sadewa'} />
+                <Post title={'Naskah Merapi-Merbabu dalam Jaringan Skriptorium'} author={'Naufal Mahdi'} />
             </div>
             <div id="postTerpopuler" class="hidden lg:hidden lg:group-hover/post:flex flex-col px-10 md:px-5 divide-y-2 divide-dotted divide-brown">
                 <Post title={'Lorem Ipsum Dolor sit amet'} author={'Tio Cahya Sadewa'} />
@@ -33,7 +33,7 @@ import Post from '../Post/Post.astro';
         <div id="map" class="h-72 w-full lg:h-full lg:mx-5 self-center shadow-[0_4px_5px_0px_rgba(#693305)] shadow-brown border border-brown z-10">
         </div>
     </div>
-        <div id="diskusi" class="lg:col-span-2 lg:hover:col-span-4 lg:hover:h-72 flex flex-col md:flex-row group/diskusi shadow-[0_4px_5px_0px_rgba(#693305)] shadow-brown border border-brown overflow-auto justify-between">
+        <div id="diskusi" class="lg:col-span-2 lg:hover:col-span-4 lg:hover:h-full flex flex-col md:flex-row group/diskusi shadow-[0_4px_5px_0px_rgba(#693305)] shadow-brown border border-brown overflow-auto justify-between">
             <div class="order-2 lg:order-none flex lg:hidden lg:group-hover/diskusi:flex lg:group-hover/diskusi:w-full flex-col m-6 space-y-3 py-2">
                 <h1 class="text-xl text-brown text-raleway">Diskusi Rutin #99</h1>
                 <article class="text-sm">
@@ -42,7 +42,7 @@ import Post from '../Post/Post.astro';
                 <span class="space-x-2 text-brown text-sm"><a href="#" class="hover:underline duration-500">Lihat Rekaman</a> <a href="#" class="hover:underline">Baca Pengantar</a></span>
             </div>
             <div class="md:w-full lg:group-hover/diskusi:w-full">
-            <img class="w-full h-auto md:h-full md:w-auto p-1" src="https://jangkah.id/wp-content/uploads/2021/03/JAGONGAN-NASKAH-38-012-768x768.jpg.webp"></img>
+            <img class="w-full h-auto md:h-full md:w-auto p-1 object-contain" src="https://jangkah.id/wp-content/uploads/2021/03/JAGONGAN-NASKAH-38-012-768x768.jpg.webp"></img>
             </div>
         </div>
     </section>
