@@ -1,5 +1,10 @@
 ---
 import Slider from './Slider.astro'
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/autoplay'
+import 'swiper/css/pagination'
+import '../styles/sliderpagination.css'
 ---
 <section class='flex mx-2 md:mx-12'>
 
@@ -30,6 +35,8 @@ import Slider from './Slider.astro'
             />
         </div>
         </div>
+          <div class="swiper-pagination"></div>
+        
     </div>
 
 
@@ -38,9 +45,6 @@ import Slider from './Slider.astro'
 <script>
 import Swiper, { Autoplay, Navigation, Pagination } from 'swiper';
   // import Swiper and modules styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/autoplay';
 Swiper.use([Navigation, Pagination, Autoplay]);
 const swiperHero = new Swiper('.swiper-hero', {
   speed: 2500,
@@ -48,8 +52,14 @@ const swiperHero = new Swiper('.swiper-hero', {
   slidesPerView: 1,
   loop: true,
   autoplay: {
-    delay: 8500,
+    delay: 3000,
     disableOnInteraction: true,
   },
+  pagination: {
+        el: ".swiper-pagination",
+        dynamicBullets: true,
+        clickable: true,
+      },
+
 });
 </script>
