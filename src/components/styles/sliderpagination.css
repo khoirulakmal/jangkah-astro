@@ -9,7 +9,7 @@
     --swiper-pagination-progressbar-size: 4px;
     --swiper-pagination-bullet-size: 8px;
     --swiper-pagination-bullet-width: 10px;
-    --swiper-pagination-bullet-height: 5px;
+    --swiper-pagination-bullet-height: 10px;
     --swiper-pagination-bullet-inactive-color: #D8D9D8;
     --swiper-pagination-bullet-inactive-opacity: 1;
     --swiper-pagination-bullet-opacity: 1;
@@ -22,7 +22,7 @@
         left: 33% !important;
     }
     :root {
-        --swiper-pagination-bullet-width: 15px;
+        --swiper-pagination-bullet-width: 10px;
         --swiper-pagination-bullet-height: 10px;
     }    
 }
