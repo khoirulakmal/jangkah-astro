@@ -1,6 +1,14 @@
 ---
 const {imageURL, title, author, summary} = Astro.props;
 ---
+<style>
+    #imageBorder {
+        border-image-source: url(/border.png);
+        border-image-repeat: round;
+        border-image-slice: 10%;
+        border-image-width: 40px;    
+    }
+</style>
 <div class="flex flex-col lg:flex-row justify-between w-full flex-auto ">
     <div class="flex">
         <img
@@ -9,8 +17,8 @@ const {imageURL, title, author, summary} = Astro.props;
         alt="Image thumbnail" 
         />
     </div>
-    <div class="flex lg:border-2 lg:border-brown lg:ml-4 p-2 shadow-xl md:shadow-none lg:w-1/3 lg:h-[400px] xl:h-[500px]">
-        <div class="flex flex-col lg:border-4 lg:border-brown  p-2 h-full font-raleway lg:p-4 lg:rounded-[33px]">
+    <div id="imageBorder" class="flex lg:ml-4 p-8 shadow-xl md:shadow-none lg:w-1/3 lg:h-[400px] xl:h-[500px]">
+        <div class="flex flex-col p-2 h-full font-raleway lg:p-4 lg:rounded-[33px]">
             <h1 class="text-sm md:text-xl xl:text-4xl text-brown hover:text-red-900 font-black group transition-all duration-200 ease-in-out">
                 <a href="/article">
                     <span class='bg-left-bottom bg-gradient-to-r from-brown to-brown bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-[3000ms] ease-out'>

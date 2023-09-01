@@ -47,13 +47,14 @@ import Swiper, { Autoplay, Navigation, Pagination } from 'swiper';
   // import Swiper and modules styles
 Swiper.use([Navigation, Pagination, Autoplay]);
 const swiperHero = new Swiper('.swiper-hero', {
-  speed: 2500,
+  speed: 5500,
   spaceBetween: 100,
   slidesPerView: 1,
   loop: true,
   autoplay: {
-    delay: 3000,
+    delay: 5000,
     disableOnInteraction: true,
+    pauseOnMouseEnter: true,  
   },
   pagination: {
         el: ".swiper-pagination",
